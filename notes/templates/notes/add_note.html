@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} CN: Add note{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <a class="stretched-link text-danger position-relative" href="{% url 'home' %}">wróć</a>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+{% endblock %}

@@ -15,7 +15,7 @@
                         <li>
                             <h4>{{ note.title }}</h4>
                             <p>{{ note.body }}</p>
-                            <a class="stretched-link text-danger" href="{% url 'note'  note.pk %}">zobacz</a>
+                            <a class="stretched-link text-danger" href="{% url 'note_view'  note.pk %}">zobacz</a>
                         </li>
 
                     {% endfor %}
