@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Hej mordo</h1>
-</body>
-</html>
+<h1>Posts</h1>
+<ul>
+    {% for note in object_list %}
+
+        <li>
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.body }}</p>
+            <a href="{% url 'note'  note.pk %}">Zobacz</a>
+        </li>
+
+    {% endfor %}
+</ul>

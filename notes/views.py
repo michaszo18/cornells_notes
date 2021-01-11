@@ -1,5 +1,13 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+
+from notes.models import Note
 
 
-def home(request):
-    return render(request, 'notes/home.html', {})
+class HomeView(ListView):
+    model = Note
+    template_name = 'notes/home.html'
+
+
+class NoteView(DetailView):
+    model = Note
+    template_name = 'notes/note.html'
