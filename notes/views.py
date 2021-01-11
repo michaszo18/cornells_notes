@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView, CreateView
 
+from notes.forms import NoteForm
 from notes.models import Note
 
 
@@ -15,5 +16,5 @@ class NoteView(DetailView):
 
 class AddNote(CreateView):
     model = Note
+    form_class = NoteForm
     template_name = 'notes/add_note.html'
-    fields = '__all__'
