@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} CN: Delete {{ note.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <h3>Delete {{ note.title }}</h3>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
