@@ -9,6 +9,7 @@
         <h1 class="mt-5 text-center">{{ note.title }}</h1>
         <p class="disabled small text-center">{{ note.category }} | {{ note.author }}</p>
         <p class="mx-5">{{ note.body }}</p>
+        <a class="disabled small text-center" href="{% url 'update_note' note.id %}">update</a>
     </div>
 
 {% endblock %}

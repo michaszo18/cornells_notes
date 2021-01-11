@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from notes.forms import NoteForm
 from notes.models import Note
@@ -18,3 +18,9 @@ class AddNote(CreateView):
     model = Note
     form_class = NoteForm
     template_name = 'notes/add_note.html'
+
+
+class UpdateNote(UpdateView):
+    model = Note
+    form_class = NoteForm
+    template_name = 'notes/update_note.html'
