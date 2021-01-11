@@ -1,5 +1,14 @@
-<h1>{{ note.title }}</h1>
-<h4>{{ note.author }}</h4>
-<p>{{ note.body }}</p>
+{% extends 'base.html' %}
 
-<a href="{% url 'home' %}">back</a>
+{% block title %} CN: {{ note.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <a class="stretched-link text-danger position-relative" href="{% url 'home' %}">wróć</a>
+        <h1 class="mt-5 text-center">{{ note.title }}</h1>
+        <p class="disabled small text-center">{{ note.category }} | {{ note.author }}</p>
+        <p class="mx-5">{{ note.body }}</p>
+    </div>
+
+{% endblock %}

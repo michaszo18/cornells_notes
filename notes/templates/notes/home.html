@@ -1,12 +1,28 @@
-<h1>Posts</h1>
-<ul>
-    {% for note in object_list %}
+{% extends 'base.html' %}
 
-        <li>
-            <h3>{{ note.title }}</h3>
-            <p>{{ note.body }}</p>
-            <a href="{% url 'note'  note.pk %}">Zobacz</a>
-        </li>
+{% block title %} CN:Home {% endblock %}
 
-    {% endfor %}
-</ul>
+{% block content %}
+
+    <div class="container my-5">
+        <h1 class="text-center">Posts</h1>
+
+        <div class="row">
+            <div class="col-6 offset-3 mt-5">
+                <ul>
+                    {% for note in object_list %}
+
+                        <li>
+                            <h4>{{ note.title }}</h4>
+                            <p>{{ note.body }}</p>
+                            <a class="stretched-link text-danger" href="{% url 'note'  note.pk %}">zobacz</a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
