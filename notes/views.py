@@ -8,7 +8,7 @@ from notes.models import Note
 class HomeView(ListView):
     model = Note
     template_name = 'notes/home.html'
-    ordering = ['-id']
+    ordering = ['-created_at']
 
 
 class NoteView(DetailView):

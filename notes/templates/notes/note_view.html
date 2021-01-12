@@ -7,7 +7,7 @@
     <div class="container my-5">
         <a class="stretched-link text-danger position-relative" href="{% url 'home' %}">wróć</a>
         <h1 class="mt-5 text-center">{{ note.title }}</h1>
-        <p class="disabled small text-center">{{ note.category }} | {{ note.author }}</p>
+        <p class="disabled small text-center">{{ note.category }} | {{ note.author }} | {{ note.created_at }}</p>
         <p class="mx-5">{{ note.body }}</p>
         <a class="disabled small text-center" href="{% url 'update_note' note.id %}">update</a>
         <a class="disabled small text-center" href="{% url 'delete_note' note.id %}">delete</a>
