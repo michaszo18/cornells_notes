@@ -1,6 +1,11 @@
+import re
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+
+
+
 
 
 class Note(models.Model):
@@ -17,3 +22,8 @@ class Note(models.Model):
     def get_absolute_url(self):
         return reverse('note_view', args=(str(self.id)))
         # return reverse('home')
+
+    def get_introduction(self):
+        cleanr = re.compile('<.*?>')
+        cleantext = re.sub(cleanr, '', self.body)
+        return cleantext[:200]
