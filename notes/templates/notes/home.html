@@ -5,7 +5,7 @@
 {% block content %}
 
     <div class="container my-5">
-        <h1 class="text-center">Posts</h1>
+        <h1 class="text-center">Notatki</h1>
 
         <div class="row">
             <div class="col-6 offset-3 mt-5">
@@ -14,7 +14,7 @@
 
                         <li>
                             <h4>{{ note.title }}</h4>
-                            <p>{{ note.body }}</p>
+                            <p>{{ note.body | slice:":200" }}</p>
                             <a class="text-danger" href="{% url 'note_view' note.id %}">zobacz</a>
                         </li>
 

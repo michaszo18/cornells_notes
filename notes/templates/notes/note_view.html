@@ -9,8 +9,10 @@
         <h1 class="mt-5 text-center">{{ note.title }}</h1>
         <p class="disabled small text-center">{{ note.category }} | {{ note.author }} | {{ note.created_at }}</p>
         <p class="mx-5">{{ note.body }}</p>
-        <a class="disabled small text-center" href="{% url 'update_note' note.id %}">update</a>
-        <a class="disabled small text-center" href="{% url 'delete_note' note.id %}">delete</a>
+        {% if user.is_authenticated %}
+            <a class="disabled small text-center" href="{% url 'update_note' note.id %}">update</a>
+            <a class="disabled small text-center" href="{% url 'delete_note' note.id %}">delete</a>
+        {% endif %}
     </div>
 
 {% endblock %}
