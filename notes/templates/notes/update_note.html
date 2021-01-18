@@ -4,14 +4,58 @@
 
 {% block content %}
 
-    <div class="container my-5">
+   <div class="container-fluid m-2 mt-5">
         <form method="post">
             {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Update</button>
+            <div class="row py-2 px-4">
+                <div class="col-md">
+                    <div class="form-floating">
+                        {{ form.title }}
+                        <label for="floatingInputGrid">Tytuł</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        {{ form.category }}
+                        <label for="floatingSelectGrid">Kategoria</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row py-2 px-4">
+                <div class="form-floating">
+                    {{ form.questions }}
+                    <label for="floatingTextarea2">Pytania:</label>
+                </div>
+            </div>
+            <div class="row py-2 px-4">
+                <div class="col-8">
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            {{ form.body }}
+                            <label for="floatingTextarea2">Notatka</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-floating">
+                        <div class="form-floating">
+                             {{ form.cues }}
+                            <label for="floatingTextarea2">Streszczenie</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row py-2 px-4">
+                <div class="form-floating">
+                    {{ form.summary }}
+                    <label for="floatingTextarea2">Podsumowanie</label>
+                </div>
+            </div>
+            <div class="form-row py-2 px-4 text-center">
+                <button type="submit" class="btn btn-primary">Zaktualizuj</button>
             </div>
         </form>
+
     </div>
 
 {% endblock %}

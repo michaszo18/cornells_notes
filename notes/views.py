@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from notes.forms import NoteForm
-from notes.models import Note
+from notes.models import Note, Category
 
 
 class HomeView(ListView):
@@ -32,3 +32,9 @@ class DeleteNote(DeleteView):
     model = Note
     template_name = 'notes/delete_note.html'
     success_url = reverse_lazy('home')
+
+
+class AddCategoryView(CreateView):
+    model = Category
+    template_name = 'categories/add_category.html'
+    fields = '__all__'
